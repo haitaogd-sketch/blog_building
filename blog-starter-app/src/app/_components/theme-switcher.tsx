@@ -33,6 +33,7 @@ const safeSetItem = (key: string, value: string): void => {
 
 /**
  * Switch button to quickly toggle user preference.
+ * Neo-brutalism style theme switcher
  */
 const Switch = () => {
   const [mode, setMode] = useState<ColorSchemePreference>("system");
@@ -67,6 +68,7 @@ const Switch = () => {
       suppressHydrationWarning
       className={styles.switch}
       onClick={handleModeSwitch}
+      aria-label="Toggle theme"
     />
   );
 };

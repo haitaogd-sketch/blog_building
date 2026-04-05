@@ -10,9 +10,94 @@
 }
 
 .markdown h2 {
-  @apply text-3xl mt-12 mb-4 leading-snug;
+  @apply text-3xl mt-12 mb-4 leading-snug font-black uppercase tracking-tight border-l-8 border-neo-yellow pl-4;
 }
 
 .markdown h3 {
-  @apply text-2xl mt-8 mb-4 leading-snug;
+  @apply text-2xl mt-8 mb-4 leading-snug font-black tracking-tight;
+}
+
+.markdown h4 {
+  @apply text-xl mt-6 mb-2 font-black;
+}
+
+/* Neo-brutalism link styles */
+.markdown a {
+  @apply font-bold underline decoration-2 decoration-neo-pink underline-offset-4;
+  @apply hover:text-neo-blue hover:decoration-neo-blue transition-colors;
+}
+
+/* Neo-brutalism list styles */
+.markdown ul {
+  @apply list-none pl-0;
+}
+
+.markdown ul li {
+  @apply relative pl-8 mb-3;
+}
+
+.markdown ul li::before {
+  content: "▶";
+  @apply absolute left-0 text-neo-pink font-bold text-sm;
+}
+
+.markdown ol {
+  @apply list-decimal pl-6;
+}
+
+.markdown ol li {
+  @apply mb-3 font-bold;
+}
+
+/* Neo-brutalism blockquote */
+.markdown blockquote {
+  @apply border-l-8 border-neo-blue bg-white p-6 my-8;
+  @apply shadow-neo;
+}
+
+.markdown blockquote p {
+  @apply text-xl italic mb-0;
+}
+
+/* Neo-brutalism code styles */
+.markdown code {
+  @apply bg-neo-dark text-neo-yellow px-2 py-1 font-mono text-base;
+  @apply border-2 border-neo-black;
+}
+
+.markdown pre {
+  @apply bg-neo-dark text-neo-yellow p-6 overflow-x-auto border-4 border-neo-black my-8;
+  @apply shadow-neo;
+}
+
+.markdown pre code {
+  @apply bg-transparent p-0 border-none;
+}
+
+/* Neo-brutalism image styles */
+.markdown img {
+  @apply border-4 border-neo-black shadow-neo my-8;
+}
+
+/* Neo-brutalism hr */
+.markdown hr {
+  @apply border-4 border-neo-black my-12;
+}
+
+/* Neo-brutalism table styles */
+.markdown table {
+  @apply w-full border-collapse my-8;
+}
+
+.markdown th,
+.markdown td {
+  @apply border-4 border-neo-black p-4 text-left;
+}
+
+.markdown th {
+  @apply bg-neo-black text-white font-black uppercase;
+}
+
+.markdown tr:nth-child(even) td {
+  @apply bg-white;
 }

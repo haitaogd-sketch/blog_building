@@ -1,48 +1,26 @@
-import Container from "@/app/_components/container";
-import { EXAMPLE_PATH } from "@/lib/constants";
-import cn from "classnames";
-
 type Props = {
   preview?: boolean;
 };
 
-const Alert = ({ preview }: Props) => {
+export default function Alert({ preview }: Props) {
   return (
     <div
-      className={cn("border-b dark:bg-slate-800", {
-        "bg-neutral-800 border-neutral-800 text-white": preview,
-        "bg-neutral-50 border-neutral-200": !preview,
-      })}
+      className={`border-4 border-neo-black p-4 mb-8 ${
+        preview
+          ? "bg-neo-yellow"
+          : "bg-neo-blue"
+      }`}
     >
-      <Container>
-        <div className="py-2 text-center text-sm">
-          {preview ? (
-            <>
-              This page is a preview.{" "}
-              <a
-                href="/api/exit-preview"
-                className="underline hover:text-teal-300 duration-200 transition-colors"
-              >
-                Click here
-              </a>{" "}
-              to exit preview mode.
-            </>
-          ) : (
-            <>
-              The source code for this blog is{" "}
-              <a
-                href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-                className="underline hover:text-blue-600 duration-200 transition-colors"
-              >
-                available on GitHub
-              </a>
-              .
-            </>
-          )}
+      <div className="flex items-center gap-3">
+        <div className="w-8 h-8 bg-neo-black flex items-center justify-center text-white font-black">
+          !
         </div>
-      </Container>
+        <span className="font-bold text-lg">
+          {preview
+            ? "This is a preview of unpublished blog post."
+            : "Welcome to this blog!"}
+        </span>
+      </div>
     </div>
   );
-};
-
-export default Alert;
+}
